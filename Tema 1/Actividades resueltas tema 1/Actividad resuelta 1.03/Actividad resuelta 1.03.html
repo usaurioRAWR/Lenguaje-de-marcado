@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Actividad 1.3</title>
+	</head>
+
+	<body>
+	<h1>Qué es SVG</h1>
+		<hr>
+			<b>
+				"Explicaciones detalladas sobre el formato gráfico vectorial SVG, un lenguaje de estándar abierto que forma parte de HTML5, usado para realizar dibujos  vectoriales en 2D." 
+			</b>
+		<hr>
+		
+		<p>
+			SVG son las siglas de Scalable Vector Graphics, que podríamos traducir libremente al español como gráficos basados en vectores escalables. En otras palabras, podemos decir que es un formato gráfico basado en XML para crear archivos vectoriales en 2D, con un lenguaje de marcado por medio de etiquetas.
+	</p>
+		
+		<img src="https://desarrolloweb.com/storage/article_featured_images/VLBbpz639hSK18XmzvIzql8MSPchvwBCTQTbvgkn.jpeg" alt="Qué es SVG">
+		
+		<p>Es recomendación del W3C desde 2001, aunque los navegadores hace menos tiempo que lo vienen implantando para dar soporte. Firefox comenzó a usarlo en 2004 y Google Chrome lo dispone desde su primer lanzamiento en 2007. Por su parte, Internet Explorer lo está implementando desde la versión 9.</p>
+		
+		<p>
+			<b>Nota:</b> <a href="http://caniuse.com/#cats=SVG" target="_blank">El soporte a las diferentes partes del estándar SVG actualizado lo puedes ver en Caniuse</a>. Observarás que casi todo SVG está ampliamente soportado, Lo que indica que podemos usarlo sin preocupaciones. Únicamente, las tipografías SVG carecen de un soporte generalizado.</div>
+		</p>
+
+		<p>
+			En cuanto a versiones del estándar, va por la 1.1, aunque se supone que en verano de 2014 podremos asistir al lanzamiento de la versión 2. Entre sus posibilidades, podemos señalar la capacidad de usar tres tipos de objetos gráficos:
+		</p>
+
+		<ol>
+			<li> formas de vectores gráficos (entre las que se incluyen líneas, poligonos, polilineas, rectángulos, círculos o elipses, etc.).</li>
+			<li>imágenes y texto.</li>
+		</ol>
+		
+		<p>
+		 	Además, a los objetos gráficos les podemos aplicar transformaciones (traslaciones, escala, etc.), animaciones y efectos de filtro (muy variados, como los que conocemos en programas de diseño como Photoshop).
+		</p>
+
+	<p>Algunas ventajas de este formato son:</p>
+		<ul>
+			<li>No pierde calidad si hacemos <i>zoom</i>.</li>
+			<li>Se puede escalar.</li>
+			<li>Se muestra de forma progresiva, no tenemos que esperar a que se descargue todo el archivo.</li>
+			<li>Se puede reducir su tamaño a través del formato de compresión GZIP.</li>
+			<li>Se le puede aplicar estilos CSS.</li>
+			<li>Se puede modificar con JavaScript.</li>
+			<li>Al ser XML, es indexable por los buscadores.</li>
+		</ul>
+
+	<h2>SVG como formato vectorial</h2>
+		<p>El uso de graficos vectoriales tiene de por sí algunas características que son representativas y en el mundo web, todavía más destacables en comparación a los gráficos conocidos como "mapa de bits".</p>
+		<hr>
+			<p>Nota: Las imágenes que normalmente usamos en un sitio web tienen mapas de bits, con extensiones como jpg, png o gif.</p>
+		<hr>
+
+		<p>Su tamaño es generalmente menor en los vectores, en bytes, que sus versiones en mapa de bits. Por ejemplo, en la siguiente imagen podemos apreciar que el mismo gráfico en SVG ocuparía 2KB y en PNG sería aproximadamente el triple, en torno a los 6KB.</p>
+		<img src="https://desarrolloweb.com/archivoimg/general/2794.png">
+		<p>
+			Además, la nitidez de un SVG siempre será mejor que un mapa de bits, sobre todo se notará si ampliamos la imagen. En un mapa de bits empezaremos a notar enseguida el pixelado en los bordes, lo que se conoce como "dientes de sierra", mientras que en SVG siempre se mantiene la nitidez perfecta, por ser vectorial.
+		</p>	
+		<p>
+			En la siguiente imagen se ve una ampliación de un SVG y un PNG. Sobra decir que el de arriba es el SVG.
+	
+		<img src="https://desarrolloweb.com/archivoimg/general/2795.png">
+		
+			Puedes obtener un repaso extra a este formato en el artículo <a href="https://desarrolloweb.com/articulos/873.php">características de SVG</a>.
+		 </p>
+	<h2>Estructura de etiquetas para hacer un SVG</h2>
+		<p>
+ 			 Al tratarse de un lenguaje basado en XML su unidad básica son las etiquetas (etiquetas como las del propio HTML). Por tanto, cuando queramos implementar una imagen SVG debemos usar una etiqueta, la cual tendrá una estructura como esta:
+		</p>
+		<br>
+			<pre>
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="400" height="230" viewBox="0 0 400 230">
+			</pre>
+		<br>
+			<code>	
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="400" height="230" viewBox="0 0 400 230">
+			</code>
+		<br>
+		
+		<p>
+			Encontramos varios atributos que a continuación explicamos por orden de aparición (aunque en la práctica, al escribir la propia etiqueta podemos poner los atributos en el orden que deseemos):
+		</p>
+		<ul>
+			<li>Version: Como decíamos, actualmente estamos en la 1.1.</li>
+			<li><i>Namespaces</i> "xmlns" y "xmlns:xlink", algo que necesita el lenguaje de marcado XML. El segundo, que pone xmlns:xlink es para referenciar archivos dentro del SVG, como imágenes, para poner enlaces y si lo dejamos de poner suele dar muchos problemas con Mozilla, porque se pierden las imagenes, no funcionan los links, etc.</li>
+			<li>Atributo "width" y "height" por defecto en píxeles, pero lo podemos poner en cualquier unidad, como centímetros, picas, etc.</li>
+			<li>Coordenadas X e Y, empiezan siempre en la esquina superior izquierda.</li>
+			<li>"Viewbox", el primer caracter representa la coordenada horizontal, el segundo la vertical, el tercero el ancho y el cuarto el alto. Como se puede apreciar en el código de la etiqueta anterior, representan los mismos valores de coordenadas y tamaño de la imagen, pero podemos alterarlos para indicar qué es lo que vamos a ver exactamente en la imagen de todo lo que se represente en el código del SVG.</li>
+		</ul>
+		
+		<hr>
+			<p><b>Nota:</b> El atributo viewbox nos permite crear una especie de máscara, o marco,
+			con la que podemos mostrar o ocultar secciones de toda la imagen definida con
+			el código SVG. Para <a href="http://jorgeatgu.com/blog/atributos-viewbox-y-preserveaspectratio-en-svg/" target="_blank">más información del viewbox puedes leer este artículo</a>, del blog
+			del propio autor de este texto.</p>
+		<hr>
+	<h2>Formas básicas</h2>
+		<p>Ahora veremos una serie de formas básicas que podemos especificar dentro de una imagen SVG. Por supuesto, éstas se crearán a partir de etiquetas que se anidan dentro de la etiqueta global del SVG.</p>
+		
+		<h3>Restange:</h3>
+			<p>Etiqueta para obtener un rectángulo.</p>
+			<!--<rect x="200" y="50" width="100" height="150" fill="#d6a085" stroke="#bd8347"strokewidth="10" />-->
+			<p>Los atributos x e y son coordenadas horizontal y vertical donde lo situamos, siendo la referencia la esquina superior izquierda. Luego asignamos altura y anchura, colores de relleno y de borde y el grosor de la línea del borde.
+			<p>Si lo queremos con los bordes redondeados, añadimos rx="4", siendo 4 el radio del redondeado, que podemos cambiar a lo que nosotros deseemos, claro está.</p>
+			
+		<h3>Circle:</h3>
+			<p>Etiqueta para hacer un círculo.</p>
+			<!--<circle cx="150" cy="100" r="40" fill="#16a085" stroke="#bdc3c7" strokewidth="4" /> -->
+			<p>Todos los atributos de los distintos tags para formas básicas son bastante parecidos. En este caso cx y cy son las coordenadas x e y del círculo, sin embargo, en este caso la referencia a situar es el centro del círculo. El atributo r es el radio.</p>
+			
+		<h3>Ellipse:</h3>
+			<p>Etiqueta para hacer una elipse.</p>
+			<!--<ellipse cx="100" cy="100" rx="30" ry="80" fill="#16a085" stroke="#bdc3c7" strokewidth="4" />-->
+			<p>Es muy parecido al círculo, solo que en una elipse definimos dos radios: uno horizontal y otro vertical, que pueden tener valores distintos.</p>
+			
+		<h3>Polygon:</h3>
+			<p>Para definir un polígono a base de indicar sus puntos vértices.</p>
+			<!--<polygon points="200,100 250,180 160,210" fill="#16a085" stroke="#bdc3c7" strokewidth="4" />-->
+			<p>Lo utilizamos para dibujar formas con tres o más caras. Cada par de valores en el atributo "points" indican uno de los vértices del polígono.</p>
+			
+		<h3>Line:</h3>
+			<p>Una línea simple.</p>
+			<!--<line x1="50" y1="50" x2="150" y2="50" stroke="#bdc3c7" strokewidth="3" />-->
+			<p>Indicamos la esquina del principio y fin, con sus coordenadas.</p>
+			
+		<h3>Polyline:</h3>
+		<p>Una línea formada por varias líneas seguidas.</p>
+		<!--<polyline points="0,40 40,40 40,80 80,80 80,120" fill="none" stroke="#bdc3c7" strokewidth="10"/>-->
+		<p>Cada par de valores en el atributo "points" indican uno de los puntos de la línea.</p>
+		
+	<h2>Conclusión</h2>
+		<p>Ahora con lo que hemos aprendido somos capaces de dibujar unas formas básicas en un documento HTML, agregando unas etiquetas como estas:</p>
+		<!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="400" height="230" viewBox="0 0 400 230">
+		<line x1="50" y1="50" x2="150" y2="50" stroke="#bdc3c7" strokewidth="3" />
+		<line x1="140" y1="50" x2="150" y2="100" stroke="#ff0099" strokewidth="6" />
+		<ellipse cx="100" cy="100" rx="30" ry="80" fill="#16a085" stroke="#bdc3c7" strokewidth="4" />
+		<rect x="200" y="50" width="100" height="150" fill="#d6a085" stroke="#bd8347" strokewidth="10" />
+		<circle cx=0 cy=0 r=50 fill="#ddd"></circle>
+		<polyline points="0,40 40,40 40,80 80,80 80,120" fill="none" stroke="#bdc3c7" strokewidth="10" />
+		<polygon points="200,100 250,180 160,210" fill="#856" stroke="black" strokewidth="4" /></svg>-->
+
+</body>
+</html>
