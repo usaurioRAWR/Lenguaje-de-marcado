@@ -11,8 +11,12 @@
 - Utilizar herramientas específicas.
 - Documentar las descripciones.
 
+-----
+
 ## Breve descripción
 En esta unidad estudiaremos el lenguaje de marcas XML. Para la definición de lenguajes XML veremos la definición del tipo de documento con DTD y con XMLSchema. También veremos una introducción a JavaScript para manejar el Document Object Model (DOM) de HTML y XML.
+
+-----
 
 ## Apuntes
 - JavaScript y HTML DOM
@@ -22,10 +26,14 @@ En esta unidad estudiaremos el lenguaje de marcas XML. Para la definición de le
 - DTD-Resumen
 - XML Schema (XSD)
 
+-----
+
 ## Actividades sobre los contenidos
 - JavaScript Class Exercises
 - XML Class Exercises (finalizado)
 - DTD Exercises
+
+-----
 
 ## Enlaces de interés 
 - XML University Datas (XML File)
@@ -34,10 +42,14 @@ En esta unidad estudiaremos el lenguaje de marcas XML. Para la definición de le
 - XML and DTD (External Site)
 - DTD vzon (External Site)
 
+-----
+
 ## Language Activities
 - Top 10 mistakes in Web Design
 - What's XML?
 - XML Schema
+
+-----
 
 ## Trabajo Práctico
 - 2nd Quarterly Work
